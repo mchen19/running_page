@@ -4,7 +4,7 @@ import { WebMercatorViewport } from 'viewport-mercator-project';
 import { chinaGeojson, RPGeometry } from '@/static/run_countries';
 import worldGeoJson from '@surbowl/world-geo-json-zh/world.zh.json';
 import { chinaCities } from '@/static/city';
-import { MAIN_COLOR, MUNICIPALITY_CITIES_ARR, NEED_FIX_MAP, RUN_TITLES } from './const';
+import { MAIN_COLOR, RUN_COLOR, RIDE_COLOR, MUNICIPALITY_CITIES_ARR, NEED_FIX_MAP, RUN_TITLES } from './const';
 import { FeatureCollection, LineString } from 'geojson';
 
 export type Coordinate = [number, number];
@@ -172,12 +172,14 @@ const geoJsonForRuns = (runs: Activity[]): FeatureCollection<LineString> => ({
     return {
       type: 'Feature',
       properties: {
-        color: MAIN_COLOR,
+        'color': colorFromType(run.type),
       },
       geometry: {
         type: 'LineString',
         coordinates: points,
+        workoutType: run.type,
       },
+      name: run.name,
     };
   }),
 });
@@ -209,6 +211,18 @@ const titleForRun = (run: Activity): string => {
     return RUN_TITLES.EVENING_RUN_TITLE;
   }
   return RUN_TITLES.NIGHT_RUN_TITLE;
+};
+
+const colorFromType = (workoutType: string): string => {
+  switch (workoutType) {
+    case 'Run':
+      return RUN_COLOR;
+    case 'Ride':
+    case 'Indoor Ride':
+      return RIDE_COLOR;
+    default:
+      return MAIN_COLOR;
+  }
 };
 
 export interface IViewState {
@@ -306,4 +320,5 @@ export {
   getBoundsForGeoData,
   formatRunTime,
   convertMovingTime2Sec,
+  colorFromType,
 };

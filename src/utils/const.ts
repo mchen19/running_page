@@ -66,6 +66,7 @@ const MIDDAY_RUN_TITLE = IS_CHINESE ? '午间跑步' : 'Midday Run';
 const AFTERNOON_RUN_TITLE = IS_CHINESE ? '午后跑步' : 'Afternoon Run';
 const EVENING_RUN_TITLE = IS_CHINESE ? '傍晚跑步' : 'Evening Run';
 const NIGHT_RUN_TITLE = IS_CHINESE ? '夜晚跑步' : 'Night Run';
+const RIDE_TITLES = IS_CHINESE ? '骑行' : 'Ride';
 
 const RUN_TITLES = {
   FULL_MARATHON_RUN_TITLE,
@@ -89,6 +90,7 @@ export {
   ROAD_LABEL_DISPLAY,
   INFO_MESSAGE,
   RUN_TITLES,
+  RIDE_TITLES,
   USE_ANIMATION_FOR_GRID,
   USE_DASH_LINE,
   LINE_OPACITY,
@@ -99,10 +101,13 @@ export {
 
 const nike = 'rgb(224,237,94)'; // if you want change the main color change here src/styles/variables.scss
 const dark_vanilla = 'rgb(228,212,220)';
+const green = 'rgb(0,237,94)';
 
 // If your map has an offset please change this line
 // issues #92 and #198
 export const NEED_FIX_MAP = false;
 export const MAIN_COLOR = nike;
+export const RUN_COLOR = nike;
+export const RIDE_COLOR = green;
 export const PROVINCE_FILL_COLOR = '#47b8e0';
 export const COUNTRY_FILL_COLOR = dark_vanilla;
