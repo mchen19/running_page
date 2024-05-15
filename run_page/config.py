@@ -68,33 +68,10 @@ TYPE_DICT = {
     "CYCLING": "Ride",
     "Ride": "Ride",
     "road_biking": "Ride",
-    "VirtualRide": "VirtualRide",
-    "indoor_cycling": "Indoor Ride",
-    "walking": "Hike",
-    "hiking": "Hike",
-    "Walk": "Hike",
-    "Hike": "Hike",
-    "Swim": "Swim",
-    "rowing": "Rowing",
-    "RoadTrip": "RoadTrip",
-    "flight": "Flight",
-    "kayaking": "Kayaking",
-    "Snowboard": "Snowboard",
-    "resort_skiing_snowboarding_ws": "Ski",  # garmin
-    "AlpineSki": "Ski",  # strava
-    "Ski": "Ski",
 }
 
 MAPPING_TYPE = [
     "Hike",
     "Ride",
-    "VirtualRide",
-    "Rowing",
     "Run",
-    "Trail Run",
-    "Swim",
-    "RoadTrip",
-    "Kayaking",
-    "Snowboard",
-    "Ski",
 ]
